@@ -94,8 +94,8 @@ const AnimatedNavbar: React.FC = () => {
                   href={item.href}
                   className={`relative font-medium transition-colors duration-300 ${
                     isActive(item.href)
-                      ? "text-blue-600"
-                      : "text-gray-700 hover:text-blue-600"
+                      ? "text-blue-600 font-bold"
+                      : "text-gray-400 hover:text-white"
                   }`}
                 >
                   {item.name}
