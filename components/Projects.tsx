@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+// import Image from "next/image";
 
 interface Project {
   id: number;
@@ -19,9 +19,10 @@ interface Project {
 }
 
 const Projects: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<
-    "all" | "web" | "mobile" | "fullstack" | "ecommerce" | "design"
-  >("all");
+  const [activeFilter, setActiveFilter] = useState<string>("all");
+  // const [activeFilter, setActiveFilter] = useState<
+  //   "all" | "web" | "mobile" | "fullstack" | "ecommerce" | "design"
+  // >("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [viewMode, setViewMode] = useState<"grid" | "masonry">("grid");
 
@@ -228,7 +229,7 @@ const Projects: React.FC = () => {
 
   const featuredProjects = projects.filter((project) => project.featured);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -238,7 +239,7 @@ const Projects: React.FC = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -250,7 +251,7 @@ const Projects: React.FC = () => {
     },
   };
 
-  const modalVariants = {
+  const modalVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
@@ -292,11 +293,11 @@ const Projects: React.FC = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Completed{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-linear-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             A showcase of my recent work and creative solutions
           </p>
@@ -325,7 +326,7 @@ const Projects: React.FC = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="relative overflow-hidden">
-                  <div className="h-64 bg-gradient-to-br from-blue-500 to-purple-600 relative">
+                  <div className="h-64 bg-linear-to-br from-blue-500 to-purple-600 relative">
                     {/* Project Image Placeholder */}
                     <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                       <span className="text-white text-lg font-semibold">
@@ -402,10 +403,10 @@ const Projects: React.FC = () => {
             {filters.map((filter) => (
               <button
                 key={filter.id}
-                onClick={() => setActiveFilter(filter.id as any)}
+                onClick={() => setActiveFilter(filter.id as string)}
                 className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                   activeFilter === filter.id
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                    ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                     : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700"
                 }`}
               >
@@ -490,7 +491,7 @@ const Projects: React.FC = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="relative overflow-hidden">
-                  <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 relative">
+                  <div className="h-48 bg-linear-to-br from-blue-400 to-purple-500 relative">
                     {/* Project Image Placeholder */}
                     <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                       <span className="text-white text-lg font-semibold">
@@ -599,7 +600,7 @@ const Projects: React.FC = () => {
             >
               {/* Modal Header */}
               <div className="relative">
-                <div className="h-64 bg-gradient-to-br from-blue-500 to-purple-600 relative">
+                <div className="h-64 bg-linear-to-br from-blue-500 to-purple-600 relative">
                   {/* Project Image */}
                   <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                     <span className="text-white text-2xl font-bold">
@@ -656,7 +657,7 @@ const Projects: React.FC = () => {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+                        className="bg-linear-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
                       >
                         Live Demo
                       </motion.a>

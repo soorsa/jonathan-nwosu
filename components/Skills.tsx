@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface Skill {
   name: string;
@@ -12,9 +12,10 @@ interface Skill {
 }
 
 const Skills: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<
-    "all" | "frontend" | "backend" | "tools" | "design"
-  >("all");
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  // const [activeCategory, setActiveCategory] = useState<
+  //   "all" | "frontend" | "backend" | "tools" | "design"
+  // >("all");
 
   const skills: Skill[] = [
     // Frontend Skills
@@ -189,7 +190,7 @@ const Skills: React.FC = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -201,7 +202,7 @@ const Skills: React.FC = () => {
     },
   };
 
-  const progressVariants = {
+  const progressVariants: Variants = {
     hidden: { width: 0 },
     visible: (level: number) => ({
       width: `${level}%`,
@@ -235,11 +236,11 @@ const Skills: React.FC = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             My{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Skills
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-linear-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             Technologies and tools I use to bring ideas to life
           </p>
@@ -256,10 +257,10 @@ const Skills: React.FC = () => {
           {categories.map((category) => (
             <button
               key={category.id}
-              onClick={() => setActiveCategory(category.id as any)}
+              onClick={() => setActiveCategory(category.id as string)}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 ${
                 activeCategory === category.id
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                  ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                   : "bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700"
               }`}
             >
@@ -288,7 +289,7 @@ const Skills: React.FC = () => {
           <AnimatePresence mode="wait">
             {filteredSkills.map((skill, index) => (
               <motion.div
-                key={skill.name}
+                key={index}
                 variants={itemVariants}
                 layout
                 initial="hidden"
@@ -300,7 +301,7 @@ const Skills: React.FC = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-4">
                     <div
-                      className={`w-12 h-12 bg-gradient-to-r ${skill.color} rounded-xl flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300`}
+                      className={`w-12 h-12 bg-linear-to-r ${skill.color} rounded-xl flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300`}
                     >
                       {skill.icon}
                     </div>
@@ -323,7 +324,7 @@ const Skills: React.FC = () => {
                   <motion.div
                     custom={skill.level}
                     variants={progressVariants}
-                    className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative`}
+                    className={`h-full bg-linear-to-r ${skill.color} rounded-full relative`}
                   >
                     {/* Animated shine effect */}
                     <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
@@ -345,7 +346,7 @@ const Skills: React.FC = () => {
                         key={star}
                         className={`w-2 h-2 rounded-full ${
                           star <= Math.ceil(skill.level / 20)
-                            ? `bg-gradient-to-r ${skill.color}`
+                            ? `bg-linear-to-r ${skill.color}`
                             : "bg-gray-300 dark:bg-gray-600"
                         }`}
                       />

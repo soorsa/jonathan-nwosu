@@ -170,11 +170,11 @@ const ServiceSection: React.FC = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             My{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Services
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-linear-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             I offer a comprehensive range of web development services to bring
             your ideas to life
@@ -202,7 +202,7 @@ const ServiceSection: React.FC = () => {
               {/* Popular Badge */}
               {service.popular && (
                 <div className="absolute top-4 right-4">
-                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  <span className="bg-linear-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                     Popular
                   </span>
                 </div>
@@ -210,7 +210,7 @@ const ServiceSection: React.FC = () => {
 
               <div className="p-6">
                 {/* Icon */}
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-linear-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-2xl">{service.icon}</span>
                 </div>
 
@@ -250,7 +250,7 @@ const ServiceSection: React.FC = () => {
                           className="flex items-center text-sm text-gray-600 dark:text-gray-400"
                         >
                           <svg
-                            className="w-4 h-4 text-green-500 mr-3 flex-shrink-0"
+                            className="w-4 h-4 text-green-500 mr-3 shrink-0"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -273,7 +273,7 @@ const ServiceSection: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:shadow-2xl"
+                  className="w-full bg-linear-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:shadow-2xl"
                 >
                   Get Started
                   <svg
@@ -293,7 +293,7 @@ const ServiceSection: React.FC = () => {
               </div>
 
               {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </motion.div>
           ))}
         </motion.div>
@@ -317,7 +317,7 @@ const ServiceSection: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="bg-linear-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Schedule a Free Consultation
               </motion.button>
