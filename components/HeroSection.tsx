@@ -308,16 +308,16 @@ const AnimatedHero: React.FC = () => {
         >
           <button
             onClick={() => scrollToSection("about")}
-            className="flex flex-col items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+            className="flex flex-col items-center cursor-pointer justify-center bg-linear-to-r from-black/50 to-black/20 p-5 rounded-full text-gray-600 dark:text-gray-100 hover:text-white dark:hover:text-white transition-colors duration-300"
             aria-label="Scroll to next section"
           >
             <span className="text-sm mb-2">Scroll Down</span>
             <motion.div
-              className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center"
+              className="w-6 h-10 border-2 border-gray-100 dark:border-gray-100 rounded-full flex justify-center"
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <div className="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2"></div>
+              <div className="w-1 h-3 bg-gray-400 dark:bg-gray-100 rounded-full mt-2"></div>
             </motion.div>
           </button>
         </motion.div>

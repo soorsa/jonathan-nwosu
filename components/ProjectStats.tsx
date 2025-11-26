@@ -28,7 +28,7 @@ const ProjectStats: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-linear-to-r from-blue-600 to-purple-600 text-white">
+    <section className="py-16 bg-linear-to-r from-blue-600 to-purple-600 text-white w-full">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

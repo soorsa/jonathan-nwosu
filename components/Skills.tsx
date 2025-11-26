@@ -217,7 +217,9 @@ const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="py-20 bg-white dark:bg-slate-900 relative overflow-hidden"
+      className="py-20 bg-gray-50 dark:bg-slate-900 relative w-full overflow-hidden"
+
+      // className="py-20 bg-white dark:bg-slate-900 relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">

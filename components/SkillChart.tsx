@@ -34,7 +34,7 @@ const SkillsChart: React.FC = () => {
   ];
 
   return (
-    <div className="grid md:grid-cols-2 gap-8 mt-12">
+    <div className="grid md:grid-cols-2 gap-8 mt-12 w-full p-20">
       {skillCategories.map((category, index) => (
         <motion.div
           key={category.category}

@@ -227,7 +227,7 @@ const Projects: React.FC = () => {
       ? projects
       : projects.filter((project) => project.category === activeFilter);
 
-  const featuredProjects = projects.filter((project) => project.featured);
+  // const featuredProjects = projects.filter((project) => project.featured);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -274,7 +274,7 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="py-20 bg-gray-50 dark:bg-slate-900 relative overflow-hidden"
+      className="py-20 bg-gray-50 dark:bg-slate-900 relative overflow-hidden w-full"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -304,7 +304,7 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {/* Featured Projects */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -327,7 +327,6 @@ const Projects: React.FC = () => {
               >
                 <div className="relative overflow-hidden">
                   <div className="h-64 bg-linear-to-br from-blue-500 to-purple-600 relative">
-                    {/* Project Image Placeholder */}
                     <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                       <span className="text-white text-lg font-semibold">
                         {project.title}
@@ -388,7 +387,7 @@ const Projects: React.FC = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Projects Filter and View Controls */}
         <motion.div
