@@ -1,12 +1,27 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import {
+  SiExpress,
+  SiGithub,
+  SiGraphql,
+  SiHtml5,
+  SiJavascript,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 
 interface Skill {
   name: string;
   level: number;
-  icon: string;
+  icon: ReactNode;
   color: string;
   category: "frontend" | "backend" | "tools" | "design";
 }
@@ -22,42 +37,42 @@ const Skills: React.FC = () => {
     {
       name: "React",
       level: 95,
-      icon: "⚛️",
+      icon: <SiReact />,
       color: "from-blue-500 to-cyan-500",
       category: "frontend",
     },
     {
       name: "TypeScript",
       level: 90,
-      icon: "📘",
+      icon: <SiTypescript />,
       color: "from-blue-600 to-blue-800",
       category: "frontend",
     },
     {
       name: "Next.js",
       level: 92,
-      icon: "▲",
+      icon: <SiNextdotjs />,
       color: "from-gray-700 to-gray-900",
       category: "frontend",
     },
     {
       name: "Tailwind CSS",
       level: 88,
-      icon: "🎨",
+      icon: <SiTailwindcss />,
       color: "from-teal-400 to-cyan-500",
       category: "frontend",
     },
     {
       name: "JavaScript",
       level: 94,
-      icon: "🟨",
+      icon: <SiJavascript />,
       color: "from-yellow-400 to-yellow-600",
       category: "frontend",
     },
     {
       name: "HTML/CSS",
       level: 96,
-      icon: "🌐",
+      icon: <SiHtml5 />,
       color: "from-orange-500 to-red-500",
       category: "frontend",
     },
@@ -66,42 +81,42 @@ const Skills: React.FC = () => {
     {
       name: "Node.js",
       level: 88,
-      icon: "🟢",
+      icon: <SiNodedotjs />,
       color: "from-green-500 to-green-700",
       category: "backend",
     },
     {
       name: "Python",
       level: 85,
-      icon: "🐍",
+      icon: <SiPython />,
       color: "from-yellow-500 to-blue-500",
       category: "backend",
     },
     {
       name: "PostgreSQL",
       level: 82,
-      icon: "🐘",
+      icon: <SiPostgresql />,
       color: "from-blue-700 to-blue-900",
       category: "backend",
     },
     {
       name: "MongoDB",
       level: 80,
-      icon: "🍃",
+      icon: <SiMongodb />,
       color: "from-green-600 to-green-800",
       category: "backend",
     },
     {
       name: "Express.js",
       level: 86,
-      icon: "🚂",
+      icon: <SiExpress />,
       color: "from-gray-600 to-gray-800",
       category: "backend",
     },
     {
       name: "GraphQL",
       level: 78,
-      icon: "📊",
+      icon: <SiGraphql />,
       color: "from-pink-500 to-purple-500",
       category: "backend",
     },
@@ -110,7 +125,7 @@ const Skills: React.FC = () => {
     {
       name: "Git",
       level: 92,
-      icon: "📚",
+      icon: <SiGithub />,
       color: "from-orange-500 to-red-500",
       category: "tools",
     },

@@ -1,13 +1,22 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import {
+  Check,
+  Code,
+  Cog,
+  Network,
+  Palette,
+  ShoppingCart,
+  Smartphone,
+} from "lucide-react";
 
 interface Service {
   id: number;
   title: string;
   description: string;
-  icon: string;
+  icon: React.ReactNode;
   features: string[];
   price?: string;
   popular?: boolean;
@@ -22,7 +31,7 @@ const ServiceSection: React.FC = () => {
       title: "Web Development",
       description:
         "Custom web applications built with modern technologies and best practices.",
-      icon: "💻",
+      icon: <Code size={40} />,
       features: [
         "Responsive Design",
         "React/Next.js Development",
@@ -37,7 +46,7 @@ const ServiceSection: React.FC = () => {
       id: 2,
       title: "Mobile Development",
       description: "Native and cross-platform mobile apps for iOS and Android.",
-      icon: "📱",
+      icon: <Smartphone size={40} />,
       features: [
         "React Native Development",
         "iOS & Android Apps",
@@ -47,14 +56,14 @@ const ServiceSection: React.FC = () => {
         "UI/UX Design",
       ],
       price: "Starting at $3,500",
-      popular: true,
+      popular: false,
     },
     {
       id: 3,
       title: "UI/UX Design",
       description:
         "Beautiful and intuitive user interfaces that enhance user experience.",
-      icon: "🎨",
+      icon: <Palette size={40} />,
       features: [
         "User Research",
         "Wireframing & Prototyping",
@@ -70,7 +79,7 @@ const ServiceSection: React.FC = () => {
       title: "E-commerce Solutions",
       description:
         "Complete online store development with secure payment integration.",
-      icon: "🛒",
+      icon: <ShoppingCart size={40} />,
       features: [
         "Shopping Cart System",
         "Payment Gateway Integration",
@@ -85,7 +94,7 @@ const ServiceSection: React.FC = () => {
       id: 5,
       title: "API Development",
       description: "Robust and scalable backend APIs for your applications.",
-      icon: "🔗",
+      icon: <Network size={40} />,
       features: [
         "RESTful API Design",
         "GraphQL Implementation",
@@ -101,7 +110,7 @@ const ServiceSection: React.FC = () => {
       title: "Consulting & Maintenance",
       description:
         "Ongoing support and consulting to keep your projects running smoothly.",
-      icon: "🔧",
+      icon: <Cog size={40} />,
       features: [
         "Code Reviews",
         "Performance Audits",
@@ -136,17 +145,17 @@ const ServiceSection: React.FC = () => {
     },
   };
 
-  const detailVariants: Variants = {
-    hidden: { opacity: 0, height: 0 },
-    visible: {
-      opacity: 1,
-      height: "auto",
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-      },
-    },
-  };
+  // const detailVariants: Variants = {
+  //   hidden: { opacity: 0, height: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     height: "auto",
+  //     transition: {
+  //       duration: 0.4,
+  //       ease: "easeOut",
+  //     },
+  //   },
+  // };
 
   return (
     <section
@@ -193,7 +202,7 @@ const ServiceSection: React.FC = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className={`relative bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group ${
+              className={`relative cursor-pointer bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group ${
                 activeService === service.id ? "ring-2 ring-blue-500" : ""
               }`}
               onMouseEnter={() => setActiveService(service.id)}
@@ -223,16 +232,31 @@ const ServiceSection: React.FC = () => {
                 </p>
 
                 {/* Price */}
-                {service.price && (
+                {/* {service.price && (
                   <div className="mb-6">
                     <span className="text-2xl font-bold text-gray-900 dark:text-white">
                       {service.price}
                     </span>
                   </div>
-                )}
+                )} */}
 
                 {/* Features List */}
-                <AnimatePresence>
+                <ul className="space-y-2 mb-4">
+                  {service.features.map((feature, featureIndex) => (
+                    <motion.li
+                      key={featureIndex}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: featureIndex * 0.1 }}
+                      className="flex items-center text-sm text-gray-600 dark:text-gray-400 gap-2"
+                    >
+                      <Check size={18} className="text-green-500" />
+                      {feature}
+                    </motion.li>
+                  ))}
+                </ul>
+
+                {/* <AnimatePresence>
                   {activeService === service.id && (
                     <motion.ul
                       variants={detailVariants}
@@ -267,10 +291,10 @@ const ServiceSection: React.FC = () => {
                       ))}
                     </motion.ul>
                   )}
-                </AnimatePresence>
+                </AnimatePresence> */}
 
                 {/* CTA Button */}
-                <motion.button
+                {/* <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-full bg-linear-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:shadow-2xl"
@@ -289,7 +313,7 @@ const ServiceSection: React.FC = () => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </motion.button>
+                </motion.button> */}
               </div>
 
               {/* Hover Effect */}
