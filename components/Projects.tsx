@@ -398,12 +398,12 @@ const Projects: React.FC = () => {
           className="flex flex-col sm:flex-row justify-between items-center mb-8 space-y-4 sm:space-y-0"
         >
           {/* Filter Buttons */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex gap-2 justify-start w-[98%] items-center overflow-x-scroll md:overflow-auto">
             {filters.map((filter) => (
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id as string)}
-                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                className={`px-4 py-2 cursor-pointer rounded-full min-w-fit font-medium transition-all duration-300 ${
                   activeFilter === filter.id
                     ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                     : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700"
@@ -415,7 +415,7 @@ const Projects: React.FC = () => {
           </div>
 
           {/* View Mode Toggle */}
-          <div className="flex items-center space-x-2 bg-white dark:bg-slate-800 rounded-lg p-1">
+          <div className="hidden md:flex items-center space-x-2 bg-white dark:bg-slate-800 rounded-lg p-1">
             <button
               onClick={() => setViewMode("grid")}
               className={`p-2 rounded-md transition-colors duration-300 ${

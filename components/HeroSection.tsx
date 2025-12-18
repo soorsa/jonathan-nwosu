@@ -60,7 +60,7 @@ const AnimatedHero: React.FC = () => {
   return (
     <section
       id="home"
-      className="w-full min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800"
+      className="w-full pt-20 min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">

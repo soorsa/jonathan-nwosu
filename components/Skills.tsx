@@ -269,19 +269,19 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex md:justify-center gap-4 mb-12 overflow-x-scroll md:overflow-auto"
         >
           {categories.map((category) => (
-            <button
+            <div
               key={category.id}
               onClick={() => setActiveCategory(category.id as string)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 ${
+              className={`px-6 py-2 cursor-pointer rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 ${
                 activeCategory === category.id
                   ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                   : "bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700"
               }`}
             >
-              <span>{category.name}</span>
+              <span className="line-clamp-1">{category.name}</span>
               <span
                 className={`text-sm px-2 py-1 rounded-full ${
                   activeCategory === category.id
@@ -291,7 +291,7 @@ const Skills: React.FC = () => {
               >
                 {category.count}
               </span>
-            </button>
+            </div>
           ))}
         </motion.div>
 

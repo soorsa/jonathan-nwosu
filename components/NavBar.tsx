@@ -65,8 +65,8 @@ const AnimatedNavbar: React.FC = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-md shadow-lg py-2"
-          : "bg-transparent py-4"
+          ? "bg-transparent backdrop-blur-md shadow-lg py-2"
+          : "bg-transparent backdrop-blur-md py-4"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -167,7 +167,7 @@ const AnimatedNavbar: React.FC = () => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="md:hidden overflow-hidden bg-black/50 pb-10"
+              className="md:hidden overflow-hidden  pb-10"
             >
               <motion.div className="flex flex-col space-y-2 pt-4">
                 {navItems.map((item, index) => (
