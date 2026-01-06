@@ -180,8 +180,8 @@ const AnimatedNavbar: React.FC = () => {
                       href={item.href}
                       className={`block px-4 py-3 rounded-lg font-medium transition-colors duration-300 ${
                         isActive(item.href)
-                          ? "bg-blue-50/50 text-white"
-                          : "text-gray-200 hover:bg-blue-200/50 hover:text-white"
+                          ? "underline underline-offset-5 text-white font-medium"
+                          : "text-gray-200 hover:bg-blue-500/50 hover:text-white"
                       }`}
                     >
                       {item.name}

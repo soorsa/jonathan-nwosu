@@ -3,7 +3,10 @@
 import React, { ReactNode, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import {
+  SiAmazonwebservices,
+  SiDocker,
   SiExpress,
+  SiFigma,
   SiGithub,
   SiGraphql,
   SiHtml5,
@@ -17,6 +20,8 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import { VscCode } from "react-icons/vsc";
+import { DiPhotoshop } from "react-icons/di";
 
 interface Skill {
   name: string;
@@ -110,7 +115,7 @@ const Skills: React.FC = () => {
       name: "Express.js",
       level: 86,
       icon: <SiExpress />,
-      color: "from-gray-600 to-gray-800",
+      color: "from-orange-500 to-red-500",
       category: "backend",
     },
     {
@@ -126,41 +131,41 @@ const Skills: React.FC = () => {
       name: "Git",
       level: 92,
       icon: <SiGithub />,
-      color: "from-orange-500 to-red-500",
+      color: "from-gray-600 to-gray-800",
       category: "tools",
     },
     {
       name: "Docker",
       level: 75,
-      icon: "🐳",
+      icon: <SiDocker />,
       color: "from-blue-500 to-cyan-500",
       category: "tools",
     },
     {
       name: "AWS",
       level: 72,
-      icon: "☁️",
+      icon: <SiAmazonwebservices />,
       color: "from-orange-400 to-yellow-500",
       category: "tools",
     },
     {
       name: "Figma",
       level: 85,
-      icon: "🎯",
+      icon: <SiFigma />,
       color: "from-purple-500 to-pink-500",
       category: "design",
     },
     {
       name: "Photoshop",
       level: 78,
-      icon: "🖌️",
+      icon: <DiPhotoshop />,
       color: "from-blue-600 to-purple-600",
       category: "design",
     },
     {
       name: "VS Code",
       level: 95,
-      icon: "💻",
+      icon: <VscCode />,
       color: "from-blue-500 to-purple-500",
       category: "tools",
     },
